@@ -26,6 +26,15 @@ public class User {
    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
    private Car car;
 
+   public User() {
+   }
+
+   public User(String firstName, String lastName, String email) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.email = email;
+   }
+
    public Car getCar() {
       return car;
    }
@@ -33,13 +42,6 @@ public class User {
    public void setCar(Car car) {
       this.car = car;
       car.setUser(this);
-   }
-   public User() {}
-   
-   public User(String firstName, String lastName, String email) {
-      this.firstName = firstName;
-      this.lastName = lastName;
-      this.email = email;
    }
 
    public Long getId() {
