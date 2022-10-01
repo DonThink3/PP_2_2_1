@@ -2,7 +2,6 @@ package hiber.config;
 
 import hiber.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -39,7 +38,6 @@ public class AppConfig {
    private Properties hibernateProperties() {
       Properties properties = new Properties();
       properties.put("hibernate.dialect", environment.getProperty("hibernate.dialect"));
-      properties.put("hibernate.current_session_context_class", environment.getProperty("hibernate.current_session_context_class"));
       properties.put("hibernate.show_sql", environment.getProperty("hibernate.show_sql"));
       properties.put("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
       return properties;
